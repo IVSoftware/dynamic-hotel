@@ -1,4 +1,4 @@
-Your [question](https://stackoverflow.com/a/74852103/5438626) is about creating dynamic bindings for textboxes and this is one tested way for doing that. First create some textboxes dynamically:
+Your [question](https://stackoverflow.com/q/74850647/5438626) is about creating dynamic bindings for textboxes and this is one tested way for doing that. First create some textboxes dynamically:
 
     public MainForm()
     {
