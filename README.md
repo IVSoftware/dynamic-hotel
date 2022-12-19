@@ -37,31 +37,32 @@ Then, whenever a new random list is generated, clear any old text and databindin
     private void generateRandomList()
     {
         // Clear ALL the data + bindings for ALL the textboxes.
-        _dynamicObjects.Clear();
         foreach (var textbox in _textboxes)
         {
             textbox.Clear();
             textbox.DataBindings.Clear();
         }
         // Generate and create new bindings
-        int count = Rando.Next(1, 105);
+        int count = Rando.Next(1, 79);
         for (int i = 0; i < count; i++)
         {
             var textbox = _textboxes[i];
             VrstaSobeCena vrstaSobeCena =
                 new VrstaSobeCena{ Sobe = (Sobe)tableLayoutPanel.GetRow(textbox) };
-            _dynamicObjects.Add(vrstaSobeCena);
             textbox.Tag = vrstaSobeCena;
             textbox.DataBindings.Add(
                 new Binding(
                     nameof(TextBox.Text),
-                    _dynamicObjects[i],
+                    vrstaSobeCena,
                     nameof(VrstaSobeCena.Cena),
                     formattingEnabled: true,
                     dataSourceUpdateMode: DataSourceUpdateMode.OnPropertyChanged,
                     null,
                     "F2"
                 ));
+
+            // TO DO
+            // ADD vrstaSobeCena HERE to the Dictionary<string, decimal> VrstaSobeCena
         }
     }
 

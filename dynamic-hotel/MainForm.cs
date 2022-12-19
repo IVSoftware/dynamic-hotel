@@ -32,7 +32,6 @@ namespace dynamic_hotel
             generateRandomList();
         }
         TextBox[] _textboxes = null;
-        readonly List<VrstaSobeCena> _dynamicObjects = new List<VrstaSobeCena>();
 
         private void onAnyTextBoxKeyDown(object sender, KeyEventArgs e)
         {
@@ -49,7 +48,6 @@ namespace dynamic_hotel
         private void generateRandomList()
         {
             // Clear ALL the data + bindings for ALL the textboxes.
-            _dynamicObjects.Clear();
             foreach (var textbox in _textboxes)
             {
                 textbox.Clear();
@@ -62,18 +60,20 @@ namespace dynamic_hotel
                 var textbox = _textboxes[i];
                 VrstaSobeCena vrstaSobeCena =
                     new VrstaSobeCena{ Sobe = (Sobe)tableLayoutPanel.GetRow(textbox) };
-                _dynamicObjects.Add(vrstaSobeCena);
                 textbox.Tag = vrstaSobeCena;
                 textbox.DataBindings.Add(
                     new Binding(
                         nameof(TextBox.Text),
-                        _dynamicObjects[i],
+                        vrstaSobeCena,
                         nameof(VrstaSobeCena.Cena),
                         formattingEnabled: true,
                         dataSourceUpdateMode: DataSourceUpdateMode.OnPropertyChanged,
                         null,
                         "F2"
                     ));
+
+                // TO DO
+                // ADD vrstaSobeCena HERE to the Dictionary<string, decimal> VrstaSobeCena
             }
         }
 
