@@ -1,4 +1,4 @@
-Your [question](https://stackoverflow.com/q/74850647/5438626) is: **How to bind dynamically created text box**. Here is one tested way for accomplishing that specific task. 
+Your [question](https://stackoverflow.com/q/74850647/5438626) is: **How to bind dynamically created text box**. Here's one tested way to achieve that specific task. 
 
 First create some textboxes dynamically:
 
