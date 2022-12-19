@@ -1,4 +1,4 @@
-Your question is about creating dynamic bindings for textboxes. I wanted to test my answer with a [Minimal Reproducible Sample](https://stackoverflow.com/help/minimal-reproducible-example) so the first thing I did was create a table layout panel to dynamically create the textboxes with a method to generate new random lists.
+Your question is about creating dynamic bindings for textboxes and this is one way to approach that. First create some textboxes dynamically:
 
     public MainForm()
     {
@@ -26,11 +26,11 @@ Your question is about creating dynamic bindings for textboxes. I wanted to test
     TextBox[] _textboxes = null;
     readonly List<VrstaSobeCena> _dynamicObjects = new List<VrstaSobeCena>();
 
-    ![screenshot]()
+[![table layout panel][1]][1]
 
-    ***
+***
 
-Whenever a new random list is generated, clear any old text and databindings from every `TextBox` before creating a new data binding for it.
+Then, whenever a new random list is generated, clear any old text and databindings from every `TextBox` before creating a new data binding for it.
 
     public static Random Rando { get; } = new Random(2);
     private void generateRandomList()
@@ -65,7 +65,7 @@ Whenever a new random list is generated, clear any old text and databindings fro
     }
 
 ***
-For testing purposes, this code is using a simplified version of the class that implements `INotifyPropertyChanged`. On issue I noticed in the code you posted is that it fails to check whether the value _has actually changed_ before firing the notification. This mock class shows one way to do that correctly.
+For testing purposes, this code is using a [Minimal Reproducible Sample](https://stackoverflow.com/help/minimal-reproducible-example) "mock" version of the class that implements `INotifyPropertyChanged`. On issue I noticed in the code you posted is that it fails to check whether the value _has actually changed_ before firing the notification. This mock class shows one way to do that correctly.
 
     enum Sobe { APP4 = 1, APP5, STUDIO, SUP, APP6, STAND, STDNT, COMSTU, LUXSTU, APP4C, APP4L, APP62, APP6L }
     class VrstaSobeCena : INotifyPropertyChanged
@@ -118,4 +118,8 @@ Finally, one way to test the two-way binding is to intercept the [Enter] key.
         }
     }
 
-![screenshot]()
+[![two-way-binding][2]][2]
+
+
+  [1]: https://i.stack.imgur.com/3YM7s.png
+  [2]: https://i.stack.imgur.com/o65j7.png

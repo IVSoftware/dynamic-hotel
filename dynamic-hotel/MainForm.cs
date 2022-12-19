@@ -77,6 +77,7 @@ namespace dynamic_hotel
             }
         }
 
+        // S I M P L I F I E D
         enum Sobe { APP4 = 1, APP5, STUDIO, SUP, APP6, STAND, STDNT, COMSTU, LUXSTU, APP4C, APP4L, APP62, APP6L }
         class VrstaSobeCena : INotifyPropertyChanged
         {
