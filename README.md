@@ -1,4 +1,4 @@
-Your question is about creating dynamic bindings for textboxes and this is one [tested](https://github.com/IVSoftware/dynamic-hotel.git) way for doing that. First create some textboxes dynamically:
+Your question is about creating dynamic bindings for textboxes and this is one tested way for doing that. First create some textboxes dynamically:
 
     public MainForm()
     {
