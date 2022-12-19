@@ -11,7 +11,7 @@ namespace dynamic_hotel
         public MainForm()
         {
             InitializeComponent();
-            buttonRandom.Click += (sender, e) => onRandomClick();
+            buttonRandom.Click += (sender, e) => generateRandomList();
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -29,8 +29,10 @@ namespace dynamic_hotel
             }
             _textboxes = tmp.ToArray();
             // Generate first dataset
-            onRandomClick();
+            generateRandomList();
         }
+        TextBox[] _textboxes = null;
+        readonly List<VrstaSobeCena> _dynamicObjects = new List<VrstaSobeCena>();
 
         private void onAnyTextBoxKeyDown(object sender, KeyEventArgs e)
         {
@@ -43,22 +45,18 @@ namespace dynamic_hotel
                 SelectNextControl(textbox, forward: true, tabStopOnly: true, nested: false, wrap: true);
             }
         }
-
-        TextBox[] _textboxes = null;
-        readonly List<VrstaSobeCena> _dynamicObjects = new List<VrstaSobeCena>();
         public static Random Rando { get; } = new Random(2);
-        private void onRandomClick()
+        private void generateRandomList()
         {
-            // Clear
+            // Clear ALL the data + bindings for ALL the textboxes.
             _dynamicObjects.Clear();
             foreach (var textbox in _textboxes)
             {
                 textbox.Clear();
                 textbox.DataBindings.Clear();
             }
-            // Generate
+            // Generate and create new bindings
             int count = Rando.Next(1, 105);
-            // Bind
             for (int i = 0; i < count; i++)
             {
                 var textbox = _textboxes[i];
@@ -108,7 +106,6 @@ namespace dynamic_hotel
                     }
                 }
             }
-
             public event PropertyChangedEventHandler PropertyChanged;
             protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
             {
