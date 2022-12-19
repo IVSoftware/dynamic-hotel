@@ -1,4 +1,6 @@
-Your [question](https://stackoverflow.com/q/74850647/5438626) is about creating dynamic bindings for textboxes and this is one tested way for doing that. First create some textboxes dynamically:
+Your [question](https://stackoverflow.com/q/74850647/5438626) is: **How to bind dynamically created text box**. Here is one tested way for accomplishing that specific task. 
+
+First create some textboxes dynamically:
 
     public MainForm()
     {
@@ -24,7 +26,6 @@ Your [question](https://stackoverflow.com/q/74850647/5438626) is about creating 
         generateRandomList();
     }
     TextBox[] _textboxes = null;
-    readonly List<VrstaSobeCena> _dynamicObjects = new List<VrstaSobeCena>();
 
 
 [![table layout panel][1]][1]
@@ -32,6 +33,7 @@ Your [question](https://stackoverflow.com/q/74850647/5438626) is about creating 
 ***
 
 Then, whenever a new random list is generated, clear any old text and databindings from every `TextBox` before creating a new data binding for it.
+
 
     public static Random Rando { get; } = new Random(2);
     private void generateRandomList()
@@ -65,10 +67,9 @@ Then, whenever a new random list is generated, clear any old text and databindin
             // ADD vrstaSobeCena HERE to the Dictionary<string, decimal> VrstaSobeCena
         }
     }
-
 ***
 
-One issue I noticed in the code you posted is that it fails to check whether the value _has actually changed_ before firing the notification. This mock class shows one way to do that correctly. (For testing purposes I'm showing a [Minimal Reproducible Sample](https://stackoverflow.com/help/minimal-reproducible-example) "mock" version of the class that implements `INotifyPropertyChanged`.) 
+One issue I noticed in the code you posted is that it fails to check whether the property _has actually changed_ before firing the notification. Here's an example of doing that correctly. (For testing purposes I'm showing a [Minimal Reproducible Sample](https://stackoverflow.com/help/minimal-reproducible-example) "mock" version of the class that implements `INotifyPropertyChanged`.) 
 
     enum Sobe { APP4 = 1, APP5, STUDIO, SUP, APP6, STAND, STDNT, COMSTU, LUXSTU, APP4C, APP4L, APP62, APP6L }
     class VrstaSobeCena : INotifyPropertyChanged
