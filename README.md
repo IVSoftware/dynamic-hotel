@@ -69,7 +69,7 @@ Then, whenever a new random list is generated, clear any old text and databindin
     }
 ***
 
-One issue I noticed in the code you posted is that it fails to check whether the property _has actually changed_ before firing the notification. Here's an example of doing that correctly. (For testing purposes I'm showing a [Minimal Reproducible Sample](https://stackoverflow.com/help/minimal-reproducible-example) "mock" version of the class that implements `INotifyPropertyChanged`.) 
+The classes shown in your code as binding sources may not bind correctly. One issue I noticed is that the property setters are failing to check whether the value _has actually changed_ before firing the notification. Here's an example of doing that correctly. (For testing purposes I'm showing a [Minimal Reproducible Sample](https://stackoverflow.com/help/minimal-reproducible-example) "mock" version of the class that implements `INotifyPropertyChanged`.) 
 
     enum Sobe { APP4 = 1, APP5, STUDIO, SUP, APP6, STAND, STDNT, COMSTU, LUXSTU, APP4C, APP4L, APP62, APP6L }
     class VrstaSobeCena : INotifyPropertyChanged
