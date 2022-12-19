@@ -44,7 +44,6 @@ namespace dynamic_hotel
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.labelCol1 = new System.Windows.Forms.Label();
-            this.buttonRandom = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@ namespace dynamic_hotel
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.buttonRandom = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -291,15 +291,6 @@ namespace dynamic_hotel
             this.labelCol1.Text = "1.6 - 30.6";
             this.labelCol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonRandom
-            // 
-            this.buttonRandom.Location = new System.Drawing.Point(27, 846);
-            this.buttonRandom.Name = "buttonRandom";
-            this.buttonRandom.Size = new System.Drawing.Size(149, 34);
-            this.buttonRandom.TabIndex = 1;
-            this.buttonRandom.Text = "Random";
-            this.buttonRandom.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -391,6 +382,15 @@ namespace dynamic_hotel
             this.label20.Text = "1.6 - 30.6";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonRandom
+            // 
+            this.buttonRandom.Location = new System.Drawing.Point(27, 846);
+            this.buttonRandom.Name = "buttonRandom";
+            this.buttonRandom.Size = new System.Drawing.Size(149, 34);
+            this.buttonRandom.TabIndex = 1;
+            this.buttonRandom.Text = "Random";
+            this.buttonRandom.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -399,6 +399,7 @@ namespace dynamic_hotel
             this.Controls.Add(this.buttonRandom);
             this.Controls.Add(this.tableLayoutPanel);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Form";
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();

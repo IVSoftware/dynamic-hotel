@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace dynamic_hotel
@@ -15,133 +11,109 @@ namespace dynamic_hotel
         public MainForm()
         {
             InitializeComponent();
-            buttonRandom.Click += onRandomClick;
+            buttonRandom.Click += (sender, e) => onRandomClick();
         }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             List<TextBox> tmp = new List<TextBox>();
-            for(int column = 1; column < tableLayoutPanel.ColumnCount; column ++)
+            for (int column = 1; column < tableLayoutPanel.ColumnCount; column++)
             {
                 for (int row = 1; row < tableLayoutPanel.RowCount; row++)
                 {
-                    tableLayoutPanel.Controls.Add(
-                        new TextBox
-                        {
-                            Anchor = (AnchorStyles)0xF,
-                        }, column, row
-                    );
+                    TextBox textBox = new TextBox { Anchor = (AnchorStyles)0xF };
+                    tableLayoutPanel.Controls.Add(textBox, column, row);
+                    tmp.Add(textBox);
+                    textBox.KeyDown += onAnyTextBoxKeyDown;
                 }
             }
+            _textboxes = tmp.ToArray();
+            // Generate first dataset
+            onRandomClick();
         }
 
-        Random random = new Random(1);
-        private void onRandomClick(object sender, EventArgs e)
+        private void onAnyTextBoxKeyDown(object sender, KeyEventArgs e)
         {
-            int countTotal = random.Next(1, 105);
-            for (int iter8 = 0; iter8 < countTotal; iter8++)
+            if ((e.KeyCode == Keys.Enter) && (sender is TextBox textbox))
             {
-                //int col = 1 + (iter8 % 13);
-                //int row = 1 + (iter8 / 13);
-                //tableLayoutPanel
-            }             
-        }
-
-        private void CreateControls()
-        {
-            var colIndex = 0;
-        //    var vrsteSoba = _Presenter.VrstaSobeDto.ToArray();
-
-        //    foreach (var bindingItem in vrsteSoba)
-        //    {
-
-        //        var lbl = new Label()
-        //        {
-        //            Width = LABEL_WIDTH,
-        //            Height = LABEL_HEIGHT - 5,
-        //            Left = 10,
-        //            Top = 30 + colIndex * (EDIT_BOX_HEIGHT + SPACE_BETWEEN_CONTROL),
-        //            Text = bindingItem
-        //        };
-        //        _dataPanel.Controls.Add(lbl);
-        //        colIndex++;
-        //    }
-
-        //    int a = 1;
-
-        //    foreach (var date in _Presenter.CeneTarifa)
-        //    {
-        //        int y = 0;
-
-        //        var panel = new Panel
-        //        {
-        //            Height = PANEL_HEIGHT * (vrsteSoba.Length - 4),
-        //            Width = EDIT_BOX_WIDTH,
-        //            Left = a * (EDIT_BOX_WIDTH + SPACE_BETWEEN_CONTROL + 50),
-        //            Top = 5
-        //        };
-
-        //        _dataPanel.Controls.Add(panel);
-
-        //        var label = new Label
-        //        {
-        //            Height = EDIT_BOX_HEIGHT,
-        //            Location = new Point(0, 10),
-        //            Text = date.Datum,
-        //            Margin = new Padding(0)
-        //        };
-
-        //        panel.Controls.Add(label);
-
-        //        int index = 0;
-
-        //        foreach (var item in date.VrstaSobeCena)
-        //        {
-        //            var box = new TextBox();
-        //            panel.Controls.Add(box);
-        //            box.Height = EDIT_BOX_HEIGHT;
-        //            box.Width = EDIT_BOX_WIDTH;
-        //            box.Location = new Point(0, 30 + y * (EDIT_BOX_HEIGHT + SPACE_BETWEEN_CONTROL));
-        //            box.DataBindings.Add(new Binding(nameof(box.Text), date, date.Cena[index].Cena1));
-
-        //            y++;
-        //            index++;
-        //        }
-        //        ++a;
-        //    }
-        //    _dataPanel.AutoScroll = true;
-        }
-    }
-    public class CenePoTarifi
-    {
-        public Dictionary<string, decimal> VrstaSobeCena { get; set; } = new Dictionary<string, decimal>();
-        public string Datum { get; set; }
-
-        private List<Cena> _Cena;
-
-
-        public List<Cena> Cena
-        {
-            get => _Cena;
-            set
-            {
-                _Cena = value;
-               // NotifyPropertyChanged("Cena");
+                e.SuppressKeyPress = e.Handled = true;
+                VrstaSobeCena vrstaSobeCena = (VrstaSobeCena)textbox.Tag;
+                string msg = $"Price for {vrstaSobeCena.Sobe} is {vrstaSobeCena.Cena.ToString("F2")}";
+                BeginInvoke((MethodInvoker)delegate {MessageBox.Show(msg); });
+                SelectNextControl(textbox, forward: true, tabStopOnly: true, nested: false, wrap: true);
             }
         }
-    }
 
-    public class Cena
-    {
-        //private string _Cena1;
-        //public string Cena1
-        //{
-        //    get => _Cena1;
-        //    set
-        //    {
-        //        _Cena = value;
-        //        //NotifyPropertyChanged("Cena1");
-        //    }
-        //}
+        TextBox[] _textboxes = null;
+        readonly List<VrstaSobeCena> _dynamicObjects = new List<VrstaSobeCena>();
+        public static Random Rando { get; } = new Random(2);
+        private void onRandomClick()
+        {
+            // Clear
+            _dynamicObjects.Clear();
+            foreach (var textbox in _textboxes)
+            {
+                textbox.Clear();
+                textbox.DataBindings.Clear();
+            }
+            // Generate
+            int count = Rando.Next(1, 105);
+            // Bind
+            for (int i = 0; i < count; i++)
+            {
+                var textbox = _textboxes[i];
+                VrstaSobeCena vrstaSobeCena =
+                    new VrstaSobeCena{ Sobe = (Sobe)tableLayoutPanel.GetRow(textbox) };
+                _dynamicObjects.Add(vrstaSobeCena);
+                textbox.Tag = vrstaSobeCena;
+                textbox.DataBindings.Add(
+                    new Binding(
+                        nameof(TextBox.Text),
+                        _dynamicObjects[i],
+                        nameof(VrstaSobeCena.Cena),
+                        formattingEnabled: true,
+                        dataSourceUpdateMode: DataSourceUpdateMode.OnPropertyChanged,
+                        null,
+                        "F2"
+                    ));
+            }
+        }
+
+        enum Sobe { APP4 = 1, APP5, STUDIO, SUP, APP6, STAND, STDNT, COMSTU, LUXSTU, APP4C, APP4L, APP62, APP6L }
+        class VrstaSobeCena : INotifyPropertyChanged
+        {
+            decimal _price = 100 + (50 * (decimal)Rando.NextDouble());
+            public decimal Cena
+            {
+                get => _price;
+                set
+                {
+                    if (!Equals(_price, value))
+                    {
+                        _price = value;
+                        OnPropertyChanged();
+                    }
+                }
+            }
+            Sobe _sobe = 0;
+            public Sobe Sobe
+            {
+                get => _sobe;
+                set
+                {
+                    if (!Equals(_sobe, value))
+                    {
+                        _sobe = value;
+                        OnPropertyChanged();
+                    }
+                }
+            }
+
+            public event PropertyChangedEventHandler PropertyChanged;
+            protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }
