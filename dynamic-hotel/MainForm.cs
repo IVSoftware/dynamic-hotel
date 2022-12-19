@@ -56,7 +56,7 @@ namespace dynamic_hotel
                 textbox.DataBindings.Clear();
             }
             // Generate and create new bindings
-            int count = Rando.Next(1, 105);
+            int count = Rando.Next(1, 79);
             for (int i = 0; i < count; i++)
             {
                 var textbox = _textboxes[i];

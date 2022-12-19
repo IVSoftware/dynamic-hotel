@@ -49,18 +49,17 @@ namespace dynamic_hotel
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.buttonRandom = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
             // 
+            this.tableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel.BackColor = System.Drawing.Color.LightCyan;
-            this.tableLayoutPanel.ColumnCount = 9;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel.ColumnCount = 7;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
@@ -87,8 +86,6 @@ namespace dynamic_hotel
             this.tableLayoutPanel.Controls.Add(this.label16, 4, 0);
             this.tableLayoutPanel.Controls.Add(this.label17, 5, 0);
             this.tableLayoutPanel.Controls.Add(this.label18, 6, 0);
-            this.tableLayoutPanel.Controls.Add(this.label19, 7, 0);
-            this.tableLayoutPanel.Controls.Add(this.label20, 8, 0);
             this.tableLayoutPanel.Location = new System.Drawing.Point(24, 39);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 14;
@@ -106,7 +103,7 @@ namespace dynamic_hotel
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142858F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142858F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142858F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(1263, 788);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(981, 649);
             this.tableLayoutPanel.TabIndex = 0;
             // 
             // label2
@@ -115,9 +112,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 56);
+            this.label2.Location = new System.Drawing.Point(3, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 56);
+            this.label2.Size = new System.Drawing.Size(134, 46);
             this.label2.TabIndex = 0;
             this.label2.Text = "APP4";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,9 +125,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 112);
+            this.label3.Location = new System.Drawing.Point(3, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 56);
+            this.label3.Size = new System.Drawing.Size(134, 46);
             this.label3.TabIndex = 0;
             this.label3.Text = "APP5";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,9 +138,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 168);
+            this.label4.Location = new System.Drawing.Point(3, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 56);
+            this.label4.Size = new System.Drawing.Size(134, 46);
             this.label4.TabIndex = 0;
             this.label4.Text = "STUDIO";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,9 +151,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 224);
+            this.label5.Location = new System.Drawing.Point(3, 184);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 56);
+            this.label5.Size = new System.Drawing.Size(134, 46);
             this.label5.TabIndex = 0;
             this.label5.Text = "SUP";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,9 +164,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 280);
+            this.label6.Location = new System.Drawing.Point(3, 230);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 56);
+            this.label6.Size = new System.Drawing.Size(134, 46);
             this.label6.TabIndex = 0;
             this.label6.Text = "APP6";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,9 +177,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 336);
+            this.label7.Location = new System.Drawing.Point(3, 276);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 56);
+            this.label7.Size = new System.Drawing.Size(134, 46);
             this.label7.TabIndex = 0;
             this.label7.Text = "STAND";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,9 +190,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 392);
+            this.label8.Location = new System.Drawing.Point(3, 322);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 56);
+            this.label8.Size = new System.Drawing.Size(134, 46);
             this.label8.TabIndex = 0;
             this.label8.Text = "STNDT";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -206,9 +203,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 448);
+            this.label9.Location = new System.Drawing.Point(3, 368);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 56);
+            this.label9.Size = new System.Drawing.Size(134, 46);
             this.label9.TabIndex = 0;
             this.label9.Text = "COMSTU";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,9 +216,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 504);
+            this.label10.Location = new System.Drawing.Point(3, 414);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 56);
+            this.label10.Size = new System.Drawing.Size(134, 46);
             this.label10.TabIndex = 0;
             this.label10.Text = "LUXSTU";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -232,9 +229,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 560);
+            this.label11.Location = new System.Drawing.Point(3, 460);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 56);
+            this.label11.Size = new System.Drawing.Size(134, 46);
             this.label11.TabIndex = 0;
             this.label11.Text = "APP4C";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -245,9 +242,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 616);
+            this.label12.Location = new System.Drawing.Point(3, 506);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(134, 56);
+            this.label12.Size = new System.Drawing.Size(134, 46);
             this.label12.TabIndex = 0;
             this.label12.Text = "APP4L";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,9 +255,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 672);
+            this.label13.Location = new System.Drawing.Point(3, 552);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(134, 56);
+            this.label13.Size = new System.Drawing.Size(134, 46);
             this.label13.TabIndex = 0;
             this.label13.Text = "APP6C";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -271,9 +268,9 @@ namespace dynamic_hotel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 728);
+            this.label14.Location = new System.Drawing.Point(3, 598);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(134, 60);
+            this.label14.Size = new System.Drawing.Size(134, 51);
             this.label14.TabIndex = 0;
             this.label14.Text = "APP6L";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -286,7 +283,7 @@ namespace dynamic_hotel
             this.labelCol1.AutoSize = true;
             this.labelCol1.Location = new System.Drawing.Point(143, 0);
             this.labelCol1.Name = "labelCol1";
-            this.labelCol1.Size = new System.Drawing.Size(134, 56);
+            this.labelCol1.Size = new System.Drawing.Size(134, 46);
             this.labelCol1.TabIndex = 0;
             this.labelCol1.Text = "1.6 - 30.6";
             this.labelCol1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,9 +296,9 @@ namespace dynamic_hotel
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(283, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 56);
+            this.label1.Size = new System.Drawing.Size(134, 46);
             this.label1.TabIndex = 0;
-            this.label1.Text = "1.6 - 30.6";
+            this.label1.Text = "1.4 - 30.4";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
@@ -312,9 +309,9 @@ namespace dynamic_hotel
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(423, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(134, 56);
+            this.label15.Size = new System.Drawing.Size(134, 46);
             this.label15.TabIndex = 0;
-            this.label15.Text = "1.6 - 30.6";
+            this.label15.Text = "1.12 - 29.12";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
@@ -325,9 +322,9 @@ namespace dynamic_hotel
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(563, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(134, 56);
+            this.label16.Size = new System.Drawing.Size(134, 46);
             this.label16.TabIndex = 0;
-            this.label16.Text = "1.6 - 30.6";
+            this.label16.Text = "30.12 - 2.1";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label17
@@ -338,9 +335,9 @@ namespace dynamic_hotel
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(703, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(134, 56);
+            this.label17.Size = new System.Drawing.Size(134, 46);
             this.label17.TabIndex = 0;
-            this.label17.Text = "1.6 - 30.6";
+            this.label17.Text = "2.1 - 20.2";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
@@ -351,40 +348,15 @@ namespace dynamic_hotel
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(843, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(134, 56);
+            this.label18.Size = new System.Drawing.Size(135, 46);
             this.label18.TabIndex = 0;
-            this.label18.Text = "1.6 - 30.6";
+            this.label18.Text = "21.2 - 1.12";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(983, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(134, 56);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "1.6 - 30.6";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(1123, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(137, 56);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "1.6 - 30.6";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonRandom
             // 
-            this.buttonRandom.Location = new System.Drawing.Point(27, 846);
+            this.buttonRandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonRandom.Location = new System.Drawing.Point(27, 702);
             this.buttonRandom.Name = "buttonRandom";
             this.buttonRandom.Size = new System.Drawing.Size(149, 34);
             this.buttonRandom.TabIndex = 1;
@@ -395,7 +367,7 @@ namespace dynamic_hotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1342, 883);
+            this.ClientSize = new System.Drawing.Size(1078, 744);
             this.Controls.Add(this.buttonRandom);
             this.Controls.Add(this.tableLayoutPanel);
             this.Name = "MainForm";
@@ -430,8 +402,6 @@ namespace dynamic_hotel
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
     }
 }
 

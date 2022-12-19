@@ -1,4 +1,4 @@
-Your question is about creating dynamic bindings for textboxes and this is one way to approach that. First create some textboxes dynamically:
+Your question is about creating dynamic bindings for textboxes and this is one way that I [tested](https://github.com/IVSoftware/dynamic-hotel.git) for doing that. First create some textboxes dynamically:
 
     public MainForm()
     {
@@ -25,6 +25,7 @@ Your question is about creating dynamic bindings for textboxes and this is one w
     }
     TextBox[] _textboxes = null;
     readonly List<VrstaSobeCena> _dynamicObjects = new List<VrstaSobeCena>();
+
 
 [![table layout panel][1]][1]
 
@@ -118,8 +119,8 @@ Finally, one way to test the two-way binding is to intercept the [Enter] key.
         }
     }
 
-[![two-way-binding][2]][2]
+[![two-way binding][2]][2]
 
 
-  [1]: https://i.stack.imgur.com/3YM7s.png
-  [2]: https://i.stack.imgur.com/o65j7.png
+  [1]: https://i.stack.imgur.com/8VG10.png
+  [2]: https://i.stack.imgur.com/1AdFk.png
